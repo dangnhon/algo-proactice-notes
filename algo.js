@@ -29,3 +29,20 @@ var isUgly = function(n) {
 };
 
 console.log(isUgly(14))
+
+
+//Brute force method for searchInsert
+var searchInsert = function(nums, target) {
+  let endBound = nums.length - 1
+  for (let i = 0; i < nums.length; i++) {
+    if (target === nums[i]) {
+      return i
+    } else if (target > nums[i] && target < nums[i+1]) {
+      return i + 1
+    } else if (target > nums[endBound]) {
+      return endBound + 1
+    } else if (target < nums[0]) {
+      return i
+    }
+  }
+};
