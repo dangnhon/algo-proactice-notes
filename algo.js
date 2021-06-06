@@ -46,3 +46,27 @@ var searchInsert = function(nums, target) {
     }
   }
 };
+
+// Binary Search, faster method with better time complexity
+var binarySearchInsert = function(nums, target) {
+  let startPoint = 0
+  let endPoint = nums.length - 1
+
+  while (startPoint <= endPoint) {
+    let midPoint = Math.floor((startPoint + endPoint) / 2)
+    if (nums[midPoint] === target) {
+      return midPoint
+    } else if (nums[midPoint] < target) {
+      startPoint = midPoint + 1
+    } else {
+      endPoint = midPoint - 1
+    }
+  }
+  if (startPoint > endPoint) {
+    return startPoint
+  } else {
+    return endPoint
+  }
+}
+
+console.log(binarySearchInsert([1,3,5,6], 7)) 
