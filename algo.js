@@ -1,5 +1,4 @@
 // this is to add digits together until it can no longer be added
-
 var addDigits = function(num) {
     if (num >= 0 && num <= 9) {
       return num
@@ -31,7 +30,7 @@ var isUgly = function(n) {
 console.log(isUgly(14))
 
 
-//Brute force method for searchInsert
+// Brute force method for searchInsert
 var searchInsert = function(nums, target) {
   let endBound = nums.length - 1
   for (let i = 0; i < nums.length; i++) {
@@ -86,3 +85,20 @@ var plusOne = function(digits) {
 };
 
 console.log(plusOne([9, 9]))
+
+//HackerRank problem, tricky but utilised hashObject for fast storage and lookup check
+function priceCheck(prod, proPrices, prodSold, soldPrice) {
+  let count = 0
+  let cata = {} 
+  for (let i = 0; i < prod.length; i++) {
+    cata[prod[i]] = proPrices[i]
+  }
+  for (let i = 0; i < prodSold.length; i++) {
+    if (prodSold[i] in cata && soldPrice[i] !== cata[prodSold[i]]) {
+      count ++
+    }
+  }
+  return count
+}
+
+console.log(priceCheck(["egg", "milk", "cheese"], [2.89, 3.29, 5.79], ["egg", "egg", "cheese", "milk"], [2.89, 2.99, 5.97, 3.29]))
