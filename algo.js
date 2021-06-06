@@ -70,3 +70,19 @@ var binarySearchInsert = function(nums, target) {
 }
 
 console.log(binarySearchInsert([1,3,5,6], 7)) 
+
+var lengthOfLastWord = function(s) {
+  let arr = s.trim().split(" ")
+  return arr.pop().length
+};
+
+console.log(lengthOfLastWord("b   a    "))
+
+var plusOne = function(digits) {
+// turn array of digits into one number 
+//increment by 1
+// turn it back into array with single digits
+  return digits
+};
+
+console.log(plusOne([9, 9]))
