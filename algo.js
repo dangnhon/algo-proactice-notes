@@ -102,3 +102,21 @@ function priceCheck(prod, proPrices, prodSold, soldPrice) {
 }
 
 console.log(priceCheck(["egg", "milk", "cheese"], [2.89, 3.29, 5.79], ["egg", "egg", "cheese", "milk"], [2.89, 2.99, 5.97, 3.29]))
+
+// This one took a bit to understand the exact problem and what it wanted for a solution
+// When the signal matches, the maxPower level is the waveLength listed,
+// The maxPower wavelength only increases and cannot go down,
+// Count how many times the maxPower level increases
+function updateTimes(signalOne, signalTwo) {
+  let matchLength = 0
+  let count = 0
+  for (let i = 0; i < signalOne.length; i++) {
+      if (signalOne[i] === signalTwo[i] && matchLength < signalOne[i]) {
+          matchLength = signalOne[i]
+          count++
+      }
+  }
+  return count
+}
+
+console.log(updateTimes([1,2,3,3,4,6], [1,2,3,4,5,6]))
