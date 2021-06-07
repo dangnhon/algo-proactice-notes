@@ -1,4 +1,5 @@
 // Stack implementation in Javascript with typical class functions
+// LIFO or 'last in first out' implemented
 // Pay attention to why helper class methods like isFull and isEmpty important 
 // contructor to initialize maxSize, check is valid number, set maxSize 
 // Init a container
