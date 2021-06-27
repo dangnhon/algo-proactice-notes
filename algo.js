@@ -168,3 +168,22 @@ var search = function(nums, target) {
   let truVal = Object.keys(hashObj).find(a => hashObj[a] === target)
   return truVal? truVal : -1
 };
+
+// should have implemented binary search, brute force method below
+var searchRange = function(nums, target) {
+  let hashObj = {} 
+
+  for (let i = 0; i < nums.length; i++) {
+    hashObj[i] = nums[i]
+  }
+
+  let truVal = Object.keys(hashObj)
+  .filter(a => hashObj[a] === target)
+  .map(Number)
+
+  if (truVal.length === 0) return [-1, -1]
+  if (truVal.length === 1) return [truVal[0], truVal[0]]
+  if (truVal.length > 2) return [truVal[0], truVal[truVal.length -1]]
+  return truVal
+};
+
