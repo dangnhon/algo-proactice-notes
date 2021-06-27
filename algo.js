@@ -133,3 +133,28 @@ var deleteDuplicates = function(head) {
     }
     return head 
 };
+
+// fiind unique intersection between 2 arrays
+var intersection = function(nums1, nums2) {
+  let hash = [] 
+  
+  for (let i = 0; i < nums1.length; i++) {
+      if (nums2.includes(nums1[i])) {
+          hash.push(nums1[i])
+      }
+  }
+    return [...new Set(hash)]
+  
+};
+
+// median of two sorted array hard leetcode problem
+var findMedianSortedArrays = function(nums1, nums2) {
+  let allNums = [...nums1, ...nums2].sort((a, b) => a -b)
+  let midPoint = Math.floor(allNums.length / 2)
+
+  if (allNums.length % 2 === 1) {
+    return allNums[midPoint]
+  } else {
+    return ((allNums[midPoint - 1] + allNums[midPoint]) / 2) 
+  }
+};
