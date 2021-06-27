@@ -11,7 +11,7 @@ class listNode {
 class linkedList {
   constructor(head = null) {
   this.head = head
-}
+  }
 
 // able to access the .next method because the head is of the listNode class
   size() {
@@ -58,8 +58,7 @@ class linkedList {
 // might be confusing, but have previous this.head value as the newNode.next
 // then reset the this.head to newNode to change it, then return it
     this.head = newNode
-    //not sure if bottom return statement is needed but given in example
-    //return this.head 
+    return this.head 
   }
 
   insertAtEnd(newData) {
@@ -67,8 +66,7 @@ class linkedList {
     let newNode = new listNode(newData) 
     if (!this.head) {
       this.head = newNode
-    //not sure if bottom return statement is needed but given in example
-    //return this.head 
+    return this.head 
     }
 
 //traverse the link list till the end to find the last node as tail
@@ -78,8 +76,7 @@ class linkedList {
       tail = tail.next 
     }
     tail.next = newNode 
-    //not sure if bottom return statement is needed but given in example
-    //return this.head 
+    return this.head 
   }
   
 // helper method to find index of specific node, could be used later on for delete
@@ -122,19 +119,9 @@ getIndexHelper(index) {
 let node1 = new listNode(2) 
 let node2 = new listNode(3) 
 let node3 = new listNode(5)
-
+// now lets 'link them together' lol
 node1.next = node2
 node2.next = node3
-
-// now lets 'link them together' lol
-let node1 = new listNode(2) 
-let node2 = new listNode(3) 
-let node3 = new listNode(5)
-
-node1.next = node2
-node2.next = node3
-
-// now lets 'link them together' lol
 
 let list1 = new linkedList(node1) 
 

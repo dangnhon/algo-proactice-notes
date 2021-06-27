@@ -121,3 +121,15 @@ function updateTimes(signalOne, signalTwo) {
 
 console.log(updateTimes([1,2,3,3,4,6], [1,2,3,4,5,6]))
 
+// delete duplicates of linked list and return the linked list in sorted order
+var deleteDuplicates = function(head) {
+    let currNode = head 
+    while (currNode !== null && currNode.next !== null) {
+        if (currNode.val === currNode.next.val) {
+            currNode.next = currNode.next.next
+        } else {
+            currNode = currNode.next
+        }
+    }
+    return head 
+};
