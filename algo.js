@@ -158,3 +158,13 @@ var findMedianSortedArrays = function(nums1, nums2) {
     return ((allNums[midPoint - 1] + allNums[midPoint]) / 2) 
   }
 };
+
+// medium question search in rotated sorted array. Kind of tricky but getting better at it
+var search = function(nums, target) {
+  let hashObj = {} 
+  for (let i = 0; i < nums.length; i++) {
+    hashObj[i] = nums[i] 
+  }
+  let truVal = Object.keys(hashObj).find(a => hashObj[a] === target)
+  return truVal? truVal : -1
+};
