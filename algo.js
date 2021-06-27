@@ -187,3 +187,18 @@ var searchRange = function(nums, target) {
   return truVal
 };
 
+// medium one thqt has good time complexity
+var singleNumber = function(nums) {
+  let hash = {} 
+  
+  for (let i = 0; i < nums.length; i++) {
+      if (nums[i] in hash) {
+          hash[nums[i]] += 1
+      } else {
+          hash[nums[i]] = 1
+      }
+  }
+  return Object.keys(hash).find(a => hash[a] === 1)
+};
+
+
